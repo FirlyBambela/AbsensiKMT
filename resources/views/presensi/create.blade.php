@@ -24,7 +24,7 @@
         }
 
         #map {
-            min-height: 200px;
+            height: 200px;
             width: 100% !important;
             border-radius: 15px;
         }
@@ -116,7 +116,7 @@
             m = set(d.getMinutes());
             s = set(d.getSeconds());
 
-            e.innerHTML = h + ':' + m + ':' + s;
+            e.innerHTML = h + ':' + m;
 
             setTimeout('jam()', 1000);
         }

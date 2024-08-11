@@ -63,9 +63,9 @@ class PresensiController extends Controller
 
         $kode_jam_kerja = $kode_jam_kerja != "null" ? Crypt::decrypt($kode_jam_kerja) : $kode_jam_kerja;
         $nik = Auth::guard('karyawan')->user()->nik;
-        $hariini = date("Y-m-d");
+        $hariini = date("d-m-Y");
         $jamsekarang = date("H:i");
-        $tgl_sebelumnya = date('Y-m-d', strtotime("-1 days", strtotime($hariini)));
+        $tgl_sebelumnya = date('d-m-Y', strtotime("-1 days", strtotime($hariini)));
         $cekpresensi_sebelumnya = DB::table('presensi')
             ->join('jam_kerja', 'presensi.kode_jam_kerja', '=', 'jam_kerja.kode_jam_kerja')
             ->where('tgl_presensi', $tgl_sebelumnya)
@@ -137,9 +137,9 @@ class PresensiController extends Controller
         $kode_jam_kerja = $request->kode_jam_kerja;
         $nik = Auth::guard('karyawan')->user()->nik;
         $status_location = Auth::guard('karyawan')->user()->status_location;
-        $hariini = date("Y-m-d");
+        $hariini = date("d-m-Y");
         $jamsekarang = date("H:i");
-        $tgl_sebelumnya = date('Y-m-d', strtotime("-1 days", strtotime($hariini)));
+        $tgl_sebelumnya = date('d-m-Y', strtotime("-1 days", strtotime($hariini)));
         $cekpresensi_sebelumnya = DB::table('presensi')
             ->join('jam_kerja', 'presensi.kode_jam_kerja', '=', 'jam_kerja.kode_jam_kerja')
             ->where('tgl_presensi', $tgl_sebelumnya)
@@ -150,7 +150,7 @@ class PresensiController extends Controller
 
         $kode_cabang = Auth::guard('karyawan')->user()->kode_cabang;
         $kode_dept = Auth::guard('karyawan')->user()->kode_dept;
-        $tgl_presensi = $ceklintashari_presensi == 1 && $jamsekarang < "08:30" ? $tgl_sebelumnya : date("Y-m-d");
+        $tgl_presensi = $ceklintashari_presensi == 1 && $jamsekarang < "08:30" ? $tgl_sebelumnya : date("d-m-Y");
         $jam = date("H:i:s");
         $lok_kantor = DB::table('cabang')->where('kode_cabang', $kode_cabang)->first();
         $lok = explode(",", $lok_kantor->lokasi_cabang);
@@ -214,7 +214,7 @@ class PresensiController extends Controller
         $fileName = $formatName . ".png";
         $file = $folderPath . $fileName;
 
-        $tgl_pulang = $jamkerja->lintashari == 1 ? date('Y-m-d', strtotime("+ 1 days", strtotime($tgl_presensi))) : $tgl_presensi;
+        $tgl_pulang = $jamkerja->lintashari == 1 ? date('d-m-Y', strtotime("+ 1 days", strtotime($tgl_presensi))) : $tgl_presensi;
         $jam_pulang = $hariini . " " . $jam;
         $jamkerja_pulang = $tgl_pulang . " " . $jamkerja->jam_pulang;
         $datakaryawan = DB::table('karyawan')->where('nik', $nik)->first();

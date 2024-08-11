@@ -17,7 +17,7 @@
             display: inline-block;
             width: 100% !important;
             margin: auto;
-            height: auto !important;
+            height: 100% !important;
             border-radius: 15px;
 
         }
@@ -55,7 +55,8 @@
     <div class="row" style="margin-top: 60px">
         <div class="col">
             <input type="hidden" id="lokasi">
-            <div class="webcam-capture"></div>
+            <div class="webcam-capture">
+            </div>
         </div>
     </div>
     <div class="jam-digital-malasngoding">

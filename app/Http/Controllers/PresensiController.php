@@ -299,7 +299,7 @@ class PresensiController extends Controller
                         //echo $response;
                         Storage::put($file, $image_base64);
                     } else {
-                        echo "error|Maaf Gagal Absen, Hubungi Tim It|in";
+                        echo "error|Maaf Gagal Absen, Hubungi Tim IT|in";
                     }
                 }
             }

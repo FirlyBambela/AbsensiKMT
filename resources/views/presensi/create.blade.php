@@ -15,15 +15,17 @@
         .webcam-capture,
         .webcam-capture video {
             display: inline-block;
-            width: 100% !important;
             margin: auto;
-            height: 100% !important;
+            object-fit: cover;
+            height: 290px !important;
+            width: 100% !important;
             border-radius: 15px;
 
         }
 
         #map {
-            height: 200px;
+            min-height: 250px;
+            width: 100% !important;
         }
 
         .jam-digital-malasngoding {
@@ -55,8 +57,7 @@
     <div class="row" style="margin-top: 60px">
         <div class="col">
             <input type="hidden" id="lokasi">
-            <div class="webcam-capture">
-            </div>
+            <div class="webcam-capture"></div>
         </div>
     </div>
     <div class="jam-digital-malasngoding">
@@ -129,8 +130,8 @@
         var notifikasi_out = document.getElementById('notifikasi_out');
         var radius_sound = document.getElementById('radius_sound');
         Webcam.set({
-            height: 480,
-            width: 640,
+            height: 320,
+            width: 290,
             image_format: 'jpeg',
             jpeg_quality: 80
         });

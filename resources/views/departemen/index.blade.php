@@ -54,25 +54,16 @@
                                 <div class="col-12">
                                     <form action="/departemen" method="GET">
                                         <div class="row">
-                                            <div class="col-10">
+                                            <div class="col-9">
                                                 <div class="form-group">
                                                     <input type="text" name="nama_dept" id="nama_dept"
                                                         class="form-control" placeholder="Departemen"
                                                         value="{{ Request('nama_dept') }}">
                                                 </div>
                                             </div>
-                                            <div class="col-2">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                            class="icon icon-tabler icon-tabler-search" width="24"
-                                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
-                                                            <path d="M21 21l-6 -6"></path>
-                                                        </svg>
                                                         Cari
                                                     </button>
                                                 </div>

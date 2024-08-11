@@ -198,12 +198,12 @@
             <a class="dropdown-item bg-primary" href="/izinsakit">
                 <ion-icon name="document-outline" role="img" class="md hydrated"
                     aria-label="videocam outline"></ion-icon>
-                <p>Sakit</p>
+                <p>Izin Sakit</p>
             </a>
             <a class="dropdown-item bg-primary" href="/izincuti">
                 <ion-icon name="document-outline" role="img" class="md hydrated"
                     aria-label="videocam outline"></ion-icon>
-                <p>Cuti</p>
+                <p>Izin Cuti</p>
             </a>
         </div>
     </div>

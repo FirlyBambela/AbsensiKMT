@@ -17,15 +17,16 @@
             display: inline-block;
             margin: auto;
             object-fit: cover;
-            height: 290px !important;
+            height: 270px !important;
             width: 100% !important;
             border-radius: 15px;
 
         }
 
         #map {
-            min-height: 250px;
+            min-height: 200px;
             width: 100% !important;
+            border-radius: 15px;
         }
 
         .jam-digital-malasngoding {

@@ -215,7 +215,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-                            Leaderboard
+                            Karyawan Hadir
                         </a>
                     </li>
                 </ul>
@@ -223,30 +223,30 @@
             <div class="tab-content mt-2" style="margin-bottom:100px;">
                 <div class="tab-pane fade show active" id="home" role="tabpanel">
                     <!--
-                                                                                                                                                                                                                                                <ul class="listview image-listview">
-                                                                                                                                                                                                                                                    @foreach ($historibulanini as $d)
+                                                                                                                                                                                                                                                                                                            <ul class="listview image-listview">
+                                                                                                                                                                                                                                                                                                                @foreach ($historibulanini as $d)
     @php
         $path = Storage::url('uploads/absensi/' . $d->foto_in);
     @endphp
-                                                                                                                                                                                                                                                    <li>
-                                                                                                                                                                                                                                                        <div class="item">
-                                                                                                                                                                                                                                                            <div class="icon-box bg-primary">
-                                                                                                                                                                                                                                                                <ion-icon name="finger-print-outline"></ion-icon>
-                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                            <div class="in">
-                                                                                                                                                                                                                                                                <div>{{ date('d-m-Y', strtotime($d->tgl_presensi)) }}</div>
-                                                                                                                                                                                                                                                                <span class="badge badge-success">{{ $d->jam_in }}</span>
-                                                                                                                                                                                                                                                                <span class="badge badge-danger">{{ $presensihariini != null && $d->jam_out != null ? $d->jam_out : 'Belum Absen' }}</span>
-                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                                                                                                                <li>
+                                                                                                                                                                                                                                                                                                                    <div class="item">
+                                                                                                                                                                                                                                                                                                                        <div class="icon-box bg-primary">
+                                                                                                                                                                                                                                                                                                                            <ion-icon name="finger-print-outline"></ion-icon>
+                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                        <div class="in">
+                                                                                                                                                                                                                                                                                                                            <div>{{ date('d-m-Y', strtotime($d->tgl_presensi)) }}</div>
+                                                                                                                                                                                                                                                                                                                            <span class="badge badge-success">{{ $d->jam_in }}</span>
+                                                                                                                                                                                                                                                                                                                            <span class="badge badge-danger">{{ $presensihariini != null && $d->jam_out != null ? $d->jam_out : 'Belum Absen' }}</span>
+                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                </li>
     @endforeach
-                                                                                                                                                                                                                                                </ul>
-                                                                                                                                                                                                                                            -->
+                                                                                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                                                                                                                                                                        -->
 
                     @foreach ($historibulanini as $d)
                         @if ($d->status == 'h')
-                            <div class="card mb-1" style="border : 1px solid blue">
+                            <div class="card mb-1" style="border : 1px solid rgb(6, 224, 133)">
                                 <div class="card-body">
                                     <div class="historicontent">
                                         <div class="iconpresensi">
@@ -374,15 +374,22 @@
                 <div class="tab-pane fade" id="profile" role="tabpanel">
                     <ul class="listview image-listview">
                         @foreach ($leaderboard as $d)
+                            @php
+                                $path = Storage::url('uploads/karyawan/' . $d->foto);
+                            @endphp
                             <li>
                                 <div class="item">
-                                    <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="image">
+                                    @if (empty($d->foto))
+                                        <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="image">
+                                    @else
+                                        <img src="{{ url($path) }}" class="image" alt="image">
+                                    @endif
                                     <div class="in">
                                         <div>
                                             <b>{{ $d->nama_lengkap }}</b><br>
                                             <small class="text-muted">{{ $d->jabatan }}</small>
                                         </div>
-                                        <span class="badge {{ $d->jam_in < '07:00' ? 'bg-success' : 'bg-danger' }}">
+                                        <span class="badge {{ $d->jam_in < '08:00' ? 'bg-success' : 'bg-danger' }}">
                                             {{ $d->jam_in }}
                                         </span>
                                     </div>

@@ -17,7 +17,7 @@
             display: inline-block;
             margin: auto;
             object-fit: cover;
-            height: 270px !important;
+            height: 250px !important;
             width: 100% !important;
             border-radius: 15px;
 

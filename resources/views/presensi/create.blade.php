@@ -25,8 +25,6 @@
 
         #map {
             height: 200px;
-            width: 100% !important;
-            border-radius: 15px;
         }
 
         .jam-digital-malasngoding {
@@ -116,7 +114,7 @@
             m = set(d.getMinutes());
             s = set(d.getSeconds());
 
-            e.innerHTML = h + ':' + m;
+            e.innerHTML = h + ':' + m + ':' + s;
 
             setTimeout('jam()', 1000);
         }

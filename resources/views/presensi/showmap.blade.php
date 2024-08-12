@@ -1,6 +1,8 @@
 <style>
     #map {
-        height: 250px;
+        height: 200px;
+        width: 100% !important;
+        border-radius: 15px;
     }
 </style>
 
@@ -16,7 +18,7 @@
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
     var marker = L.marker([latitude, longitude]).addTo(map);
-    var circle = L.circle([-7.291612116081597, 108.23092644299736], {
+    var circle = L.circle([lat_kantor, long_kantor], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,

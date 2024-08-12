@@ -63,9 +63,9 @@ class PresensiController extends Controller
 
         $kode_jam_kerja = $kode_jam_kerja != "null" ? Crypt::decrypt($kode_jam_kerja) : $kode_jam_kerja;
         $nik = Auth::guard('karyawan')->user()->nik;
-        $hariini = date("d-m-Y");
+        $hariini = date("Y-m-d");
         $jamsekarang = date("H:i");
-        $tgl_sebelumnya = date('d-m-Y', strtotime("-1 days", strtotime($hariini)));
+        $tgl_sebelumnya = date('Y-m-d', strtotime("-1 days", strtotime($hariini)));
         $cekpresensi_sebelumnya = DB::table('presensi')
             ->join('jam_kerja', 'presensi.kode_jam_kerja', '=', 'jam_kerja.kode_jam_kerja')
             ->where('tgl_presensi', $tgl_sebelumnya)
@@ -137,9 +137,9 @@ class PresensiController extends Controller
         $kode_jam_kerja = $request->kode_jam_kerja;
         $nik = Auth::guard('karyawan')->user()->nik;
         $status_location = Auth::guard('karyawan')->user()->status_location;
-        $hariini = date("d-m-Y");
+        $hariini = date("Y-m-d");
         $jamsekarang = date("H:i");
-        $tgl_sebelumnya = date('d-m-Y', strtotime("-1 days", strtotime($hariini)));
+        $tgl_sebelumnya = date('Y-m-d', strtotime("-1 days", strtotime($hariini)));
         $cekpresensi_sebelumnya = DB::table('presensi')
             ->join('jam_kerja', 'presensi.kode_jam_kerja', '=', 'jam_kerja.kode_jam_kerja')
             ->where('tgl_presensi', $tgl_sebelumnya)
@@ -150,7 +150,7 @@ class PresensiController extends Controller
 
         $kode_cabang = Auth::guard('karyawan')->user()->kode_cabang;
         $kode_dept = Auth::guard('karyawan')->user()->kode_dept;
-        $tgl_presensi = $ceklintashari_presensi == 1 && $jamsekarang < "08:30" ? $tgl_sebelumnya : date("d-m-Y");
+        $tgl_presensi = $ceklintashari_presensi == 1 && $jamsekarang < "08:30" ? $tgl_sebelumnya : date("Y-m-d");
         $jam = date("H:i:s");
         $lok_kantor = DB::table('cabang')->where('kode_cabang', $kode_cabang)->first();
         $lok = explode(",", $lok_kantor->lokasi_cabang);

@@ -61,7 +61,7 @@ class PresensiController extends Controller
     public function create($kode_jam_kerja)
     {
 
-        $kode_jam_kerja = $kode_jam_kerja != null ? Crypt::decrypt($kode_jam_kerja) : $kode_jam_kerja;
+        $kode_jam_kerja = $kode_jam_kerja != "null" ? Crypt::decrypt($kode_jam_kerja) : $kode_jam_kerja;
         $nik = Auth::guard('karyawan')->user()->nik;
         $hariini = date("Y-m-d");
         $jamsekarang = date("H:i");

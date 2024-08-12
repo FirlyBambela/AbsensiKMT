@@ -63,7 +63,7 @@ class PresensiController extends Controller
 
         $kode_jam_kerja = $kode_jam_kerja != "null" ? Crypt::decrypt($kode_jam_kerja) : $kode_jam_kerja;
         $nik = Auth::guard('karyawan')->user()->nik;
-        $hariini = date("d-m-Y");
+        $hariini = date("Y-m-d");
         $jamsekarang = date("H:i");
         $tgl_sebelumnya = date('Y-m-d', strtotime("-1 days", strtotime($hariini)));
         $cekpresensi_sebelumnya = DB::table('presensi')

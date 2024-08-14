@@ -182,7 +182,7 @@
 
                         if(empty($status) && empty($ceklibur) && $cekhari != 'Minggu'){
                             $jml_alpa += 1;
-                            $color = "red";
+                            $color = "orange";
                         }
 
                         if(!empty($ceklibur)){
@@ -191,7 +191,7 @@
 
 
                         if($cekhari == "Minggu"){
-                            $color = "orange";
+                            $color = "red";
                         }
 
 

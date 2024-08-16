@@ -119,6 +119,7 @@ Route::group(['middleware' => ['role:administrator|admin departemen,user']], fun
     Route::post('/konfigurasi/storesetjamkerjabydate', [KonfigurasiController::class, 'storesetjamkerjabydate']);
     Route::get('/konfigurasi/{nik}/{bulan}/{tahun}/getjamkerjabydate', [KonfigurasiController::class, 'getjamkerjabydate']);
     Route::post('/konfigurasi/deletejamkerjabydate', [KonfigurasiController::class, 'deletejamkerjabydate']);
+
     //Presensi
     Route::get('/presensi/monitoring', [PresensiController::class, 'monitoring']);
     Route::post('/getpresensi', [PresensiController::class, 'getpresensi']);

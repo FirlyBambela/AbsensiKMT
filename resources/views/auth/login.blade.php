@@ -29,12 +29,12 @@
     <!-- App Capsule -->
     <div id="appCapsule" class="pt-0">
 
-        <div class="login-form mt-1">
+        <div class="login-form mt-1 ">
             <div class="section">
                 <img src="{{ asset('assets/img/login/login.png') }}" alt="image" class="form-image">
             </div>
             <div class="section">
-                <h1>Absensi KMT </h1>
+                <h1>ABSENSI KMT </h1>
                 <h4>Silahkan Login</h4>
             </div>
             <div class="section mt-1 mb-5">

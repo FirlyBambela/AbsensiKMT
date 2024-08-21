@@ -113,21 +113,11 @@ function selisih($jam_masuk, $jam_keluar)
             <td>{{ $d->nama_lengkap }}</td>
             <td>{{ $d->kode_cabang }}</td>
             <td>{{ $d->kode_dept }}</td>
-            <td>
-                <span class="badge bg-danger"> - </span>
-            </td>
-            <td>
-                <span class="badge bg-danger"> - </span>
-            </td>
-            <td>
-                <span class="badge bg-danger"> - </span>
-            </td>
-            <td>
-                <span class="badge bg-danger"> - </span>
-            </td>
-            <td>
-                <span class="badge bg-danger"> - </span>
-            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
                 @if ($d->status == 'i')
                     <span class="badge bg-warning">I</span>

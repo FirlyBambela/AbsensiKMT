@@ -226,7 +226,7 @@ class PresensiController extends Controller
                 if ($jam_pulang < $jamkerja_pulang) {
                     echo "error|Maaf Belum Waktunya Pulang |out";
                 } else if (!empty($datapresensi->jam_out)) {
-                    echo "error|Anda Sudah Melakukan Absen Pulang Sebelmnya ! |out";
+                    echo "error|Anda Sudah Melakukan Absen Pulang Sebelumnya ! |out";
                 } else {
                     $data_pulang = [
                         'jam_out' => $jam,
@@ -235,7 +235,7 @@ class PresensiController extends Controller
                     ];
                     $update = DB::table('presensi')->where('tgl_presensi', $tgl_presensi)->where('nik', $nik)->update($data_pulang);
                     if ($update) {
-                        echo "success|Terimkasih, Hati Hati Di Jalan|out";
+                        echo "success|Terimakasih, Hati Hati Di Jalan|out";
                         Storage::put($file, $image_base64);
 
                         $curl = curl_init();
@@ -257,7 +257,7 @@ class PresensiController extends Controller
                         curl_close($curl);
                         //echo $response;
                     } else {
-                        echo "error|Maaf Gagal absen, Hubungi Tim It|out";
+                        echo "error|Maaf Gagal Absen, Hubungi Tim It|out";
                     }
                 }
             } else {
@@ -277,7 +277,7 @@ class PresensiController extends Controller
                     ];
                     $simpan = DB::table('presensi')->insert($data);
                     if ($simpan) {
-                        echo "success|Terimkasih, Selamat Bekerja|in";
+                        echo "success|Terimakasih, Selamat Bekerja|in";
 
                         $curl = curl_init();
 

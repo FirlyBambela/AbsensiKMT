@@ -64,7 +64,7 @@ class IzinabsenController extends Controller
             foreach ($datapresensi as $d) {
                 $blacklistdate .= date('d-m-Y', strtotime($d->tgl_presensi)) . ",";
             }
-            return redirect('/presensi/izin')->with(['error' => 'Tidak Bisa Melakukan Pengajuan Pada Tanggal ' . $blacklistdate . 'Karena Ada tanggal yang sudah digunkan / sudah melakukan Presensi, Silahkan Ganti Periode Tanggal Pengajuan']);
+            return redirect('/presensi/izin')->with(['error' => 'Tidak Bisa Melakukan Pengajuan Pada Tanggal ' . $blacklistdate . 'Karena Ada tanggal yang sudah digunkan / sudah melakukan Absensi, Silahkan Ganti Periode Tanggal Pengajuan']);
         } else if ($cekpengajuan->count() > 0) {
             return redirect('/presensi/izin')->with(['error' => 'Tidak Bisa Melakukan Pengajuan Pada Tanggal Tersebut Karena Ada tanggal yang sudah digunakan Sebelumnya !']);
         } else {

@@ -9,7 +9,7 @@
                         Klinik Mata Totabuan
                     </div>
                     <h2 class="page-title">
-                        Rekap Presensi Hari Ini {{ date('d-m-Y', strtotime(date('Y-m-d'))) }}
+                        Rekap Absensi Hari Ini {{ date('d-m-Y', strtotime(date('Y-m-d'))) }}
                     </h2>
                 </div>
 

@@ -15,7 +15,7 @@
     </a>
 
     @if (Auth::guard('karyawan')->user()->status_jam_kerja == 1)
-        <a href="/presensi/scanqr" class="item ">
+        <a href="/presensi/null/create" class="item ">
             <div class="col">
                 <div class="action-button large">
                     <ion-icon name="camera-outline"></ion-icon>
